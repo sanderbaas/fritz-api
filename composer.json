@@ -1,0 +1,21 @@
+{
+  "name": "kuhschnappel/fritz-api",
+  "description": "API Connector to access Smart Home Date from AVM Fritz!Box",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Mike Zimmer",
+      "email": "kuhschnappel@gmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "*",
+    "monolog/monolog": "^2.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kuhschnappel\\FritzApi\\": "Classes/"
+    }
+  }
+}
