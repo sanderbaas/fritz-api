@@ -16,7 +16,7 @@ trait DeviceDefaults
         if (!$cached)
             $this->fritzDeviceInfos->present = (string)Api::switchCmd('getswitchpresent', ['ain' => $this->getIdentifier()]);
 
-        return (string)$this->fritzDeviceInfos->present;
+        return ($this->fritzDeviceInfos->present == '0') ? false : true;
     }
 
     /**
@@ -116,11 +116,5 @@ trait DeviceDefaults
         return $statArr;
 
     }
-
-
-
-
-
-
 
 }
