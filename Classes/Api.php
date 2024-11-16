@@ -5,6 +5,7 @@ namespace Kuhschnappel\FritzApi;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Kuhschnappel\FritzApi\Utility\Helper;
+use Monolog\Level;
 use \Monolog\Logger;
 use \Monolog\Handler\RotatingFileHandler;
 
@@ -150,7 +151,7 @@ class Api
             file_put_contents($htaccess, $content);
         }
 
-        $loglevel = ($logging == 'DEBUG') ? Logger::DEBUG : Logger::ERROR;
+        $loglevel = ($logging == 'DEBUG') ? Level::Debug : Level::Error;
 
         self::$logger = new Logger('fritzApi');
         self::$logger->pushHandler(new RotatingFileHandler($logDir . '/fritz-api-connector.log', 30, $loglevel));
